@@ -21,6 +21,7 @@ app.use(cookieParser());
 app.use("/api/v1", require("./routes/userRoute"));
 app.use("/api/v1", require("./routes/assignmentRoute"));
 app.use("/api/v1", require("./routes/ideasRoute"));
+app.use("/api/v1", require("./routes/newsRoute"));
 
 app.use(errorHandler);
 
