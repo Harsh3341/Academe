@@ -6,6 +6,9 @@ const cors = require("cors");
 const colors = require("colors");
 const cookieParser = require("cookie-parser");
 const bodyParser = require("body-parser");
+const connectDB = require("./config/db");
+
+connectDB();
 
 app.use(cors());
 app.use(bodyParser.urlencoded({ extended: true }));
