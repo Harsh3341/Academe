@@ -36,6 +36,20 @@ const createNews = asyncHandler(async (req, res) => {
   }
 });
 
+const getNews = asyncHandler(async (req, res) => {
+  const data = await NewsSchema.find({});
+  if (data) {
+    res.status(200).json({
+      success: true,
+      data,
+    });
+  } else {
+    res.status(400);
+    throw new Error("News not fetched");
+  }
+});
+
 module.exports = {
   createNews,
+  getNews,
 };
