@@ -1,0 +1,31 @@
+{
+  "name": "student-performance-management",
+  "version": "1.0.0",
+  "description": "calculate student academic performance",
+  "main": "backend/server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "server": "nodemon backend/server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Harsh3341/Student-Performance-Management.git"
+  },
+  "author": "Harsh3341",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Harsh3341/Student-Performance-Management/issues"
+  },
+  "homepage": "https://github.com/Harsh3341/Student-Performance-Management#readme",
+  "devDependencies": {
+    "nodemon": "^2.0.22"
+  },
+  "dependencies": {
+    "body-parser": "^1.20.2",
+    "colors": "^1.4.0",
+    "cookie-parser": "^1.4.6",
+    "cors": "^2.8.5",
+    "dotenv": "^16.0.3",
+    "express": "^4.18.2"
+  }
+}
