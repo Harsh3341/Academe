@@ -2,6 +2,7 @@ const asyncHandler = require("express-async-handler");
 const jwt = require("jsonwebtoken");
 const bcrypt = require("bcryptjs");
 const User = require("../models/userModel");
+const sendToken = require("../utils/jwtToken");
 
 const loginUser = asyncHandler(async (req, res) => {
   res.status(200).json({
@@ -39,15 +40,18 @@ const registerUser = asyncHandler(async (req, res) => {
   });
 
   if (user) {
-    res.status(201).json({
-      success: true,
-      message: "User created successfully",
-    });
+    sendToken(generateToken(user._id), 200, res, user);
   } else {
     res.status(400);
     throw new Error("Invalid user data");
   }
 });
+
+const generateToken = (id) => {
+  return jwt.sign({ id }, process.env.JWT_SECRET, {
+    expiresIn: process.env.JWT_EXPIRES_IN,
+  });
+};
 
 module.exports = {
   loginUser,
