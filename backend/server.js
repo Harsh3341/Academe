@@ -20,6 +20,7 @@ app.use(cookieParser());
 // Routes
 app.use("/api/v1", require("./routes/userRoute"));
 app.use("/api/v1", require("./routes/assignmentRoute"));
+app.use("/api/v1", require("./routes/ideasRoute"));
 
 app.use(errorHandler);
 

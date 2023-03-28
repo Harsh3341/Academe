@@ -9,24 +9,24 @@ const {
   answerAssignment,
 } = require("../controllers/assignmentController");
 
-// @desc    Create Assignment
-// @route   POST /api/v1/assign
-// @access  Admin
+//Create Assignment
+//POST /api/v1/assign
+//Admin
 router.post("/assign", protect, createAssignment);
 
-// @desc    Get Assignments
-// @route   GET /api/v1/assign
-// @access  Public
+//Get Assignments
+//GET /api/v1/assign
+//Public
 router.get("/assign", protect, getAssignments);
 
-// @desc    Get Assignment
-// @route   GET /api/v1/assign/:id
-// @access  Public
+//Get Assignment
+//GET /api/v1/assign/:id
+//Public
 router.get("/assign/:id", protect, getAssignment);
 
-// @desc    Answer Assignment
-// @route   POST /api/v1/assign/:id
-// @access  Public
+//Answer Assignment
+//POST /api/v1/assign/:id
+//Public
 router.post("/assign/:id", protect, answerAssignment);
 
 module.exports = router;
