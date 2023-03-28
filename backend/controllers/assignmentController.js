@@ -31,6 +31,22 @@ const createAssignment = asyncHandler(async (req, res) => {
   }
 });
 
+const getAssignment = asyncHandler(async (req, res) => {
+  const assignments = await assignmentSchema.find();
+
+  if (assignments) {
+    res.status(200).json({
+      success: true,
+      message: "Assignments fetched successfully",
+      data: assignments,
+    });
+  } else {
+    res.status(400);
+    throw new Error("Assignments not fetched");
+  }
+});
+
 module.exports = {
   createAssignment,
+  getAssignment,
 };
